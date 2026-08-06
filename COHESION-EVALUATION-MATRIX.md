@@ -2,6 +2,8 @@
 
 Operating under Iweo Global Inc. as **The Sovereign Algorithmic Integrity Authority (SAIA)**, The Iweo Cohesion for Intelligent Technologies (ICIT) welcomes all global computing practitioners to submit their system architectures for formal validation and registry listing.
 
+Operating under the authority of the  **The Sovereign Algorithmic Integrity Authority (SAIA)**, the regulatory and certification arm of the Iweo Cohesion for Intelligent Technologies (ICIT), this system enforces rigorous validation frameworks for independent practitioners and enterprise ecosystems alike to ensure human safety in intelligent system development.
+
 Our master byline governs all entry tracks: *Enforcing Base-10 Mathematical Conservation and Geometric Equilibrium Across High-Dimensional Computing Matrices.*
 
 ---
