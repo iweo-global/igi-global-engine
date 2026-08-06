@@ -27,17 +27,22 @@ Modern technology architectures are currently collapsing under an extractive, as
 ---
 
 ## 4. The Human Capital Alignment Framework
-We do not analyze applicants based on legacy resume metrics, corporate pedigrees, or regional geography. We filter global human capital strictly through our two P3 character sovereignty matrices:
+We do not analyze applicants based on legacy metrics, corporate credentials, or regional geography. We filter global human capital through the proprietary Iweology P3x3 Matrix to determine optimal placement across IGI operational tracks and ICIT compliance registries.
 
 ### Phase I: The Core Execution Metric [P3(1)]
-*   **Personality:** Audits collaborative synergy and communication metrics across systemic boundaries.
-*   **Performance:** Evaluates the capacity to execute clean, optimal software configurations without generating data debt.
-*   **Predictability:** Ensures behavioral and code output remains consistently stable under intense operational loads.
+*   **Productivity:** Quantifies sustained structural output, asset optimization efficiency, and tangible milestone realization within development sprints.
+*   **Performance:** Evaluates computational execution speed, optimal configuration deployment, and immediate processing throughput.
+*   **Predictability:**  Measures long-term behavioral consistency, architectural pattern recognition, and systemic reliability under intensive structural loads.
 
 ### Phase II: The Sovereign Anchor Metric [P3(2)]
-*   **Patience:** The internal capacity to allow environmental loads to re-balance smoothly without forced over-optimization.
-*   **Perseverance:** The structural stamina required to trace, map, and debug deep-strata performance lag spikes.
-*   **Persistence:** An unyielding commitment to absolute data invariants, protecting ethical code guardrails against external commercial or timeline pressures.
+*   **Patience:** The psychological and operational capacity to allow organic structural builds to mature without introducing forced over-optimization or premature deployment friction.
+*   **Perseverance:** The structural stamina required to systematically track, map, isolate, and debug high-dimensional anomalies across fragmented environments.
+*   **Persistence:** Persistence: An unyielding, disciplined commitment to architectural compliance guidelines against systemic decay or external market volatility.
+
+### Phase III: The Alignment & Integration Metric [P3(3)]
+*   **Personality:** Validates cultural synergy, collaborative diplomatic poise, and cohesive interaction within core IGI technical cells and ICIT committees.
+*   **Perspective:** Evaluates holistic systemic vision—the capacity to view individual code blocks through the broader lens of humanity's safety in intelligent technology development.
+*   **Passion:** Measures intrinsic ideological alignment with the overarching mission of ICIT, ensuring safety and compliance remain non-negotiable anchors over pure commercial speed.
 
 ---
 APPLICATION INITIALIZATION GATEWAY:
