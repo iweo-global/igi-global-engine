@@ -1,8 +1,9 @@
 # ◯ THE iWEIOD RESOLUTION OF THE NAVIER-STOKES PARADOX: GLOBAL FLUID SMOOTHNESS
 
 **Document Reference:** `/docs/core/NAVIER_STOKES_RESOLUTION.md`  
-**Parent Entity:** IWEO GLOBAL, INC. [DELAWARE RECOGNITION LEDGER]
-**System Status:** 100% Cryptographic Insulation // Zero-Loss Validation Core [Bohm]
+**Parent Entity:** IWEO GLOBAL, INC. [DELAWARE RECOGNITION LEDGER] 
+
+**System Status:** 100% Cryptographic Insulation // Zero-Loss Validation Core [Bohm] 
 
 ---
 
