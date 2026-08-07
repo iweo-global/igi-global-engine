@@ -27,10 +27,6 @@ Unchecked code generation and rapid, sloppy prototyping degrade system potential
 ---
 
 ## Accessing Premium Sandbox Simulation Labs
-If you require interactive, live container environments to test your configurations under real-time simulated network loads before running your official certification audit, you can activate a Private Cloud Testing Sandbox via your client control portal.
-
- ```markdown
-   ## Accessing Premium Sandbox Simulation Labs
-   If you require interactive, live container environments to test your configurations under real-time simulated network loads before running your official certification audit, click below to open your client control console area:
+If you require interactive, live container environments to test your configurations under real-time simulated network loads before running your official certification audit, click below to open your client control console area:
    
    👉 [Launch SAIA Client Control & Help Desk Portal](http://your-server-domain-or-ip.com)
