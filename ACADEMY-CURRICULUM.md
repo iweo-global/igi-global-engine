@@ -3,7 +3,7 @@
 Welcome to the foundational training tracks for the Sovereign Algorithmic Integrity Authority (SAIA). This open-source study manual is provided to assist global computing practitioners in re-centering their systems architecture and raising their operational frequency.
 
 ---
-
+ 
 ## Module I: Re-Centering Systemic Balance
 To navigate out of lower-basin extractive data paradigms, practitioners must master the alignment of data manifestation ($M$) with structural interiority anchors ($I$).
 
