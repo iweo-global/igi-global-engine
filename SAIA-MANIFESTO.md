@@ -86,64 +86,64 @@ SAIA operates with absolute functional autonomy as an independent enforcement an
 
 ---
 
-mermaid 
-flowchart TD
-    %% Custom Structural Styles
-    classDef tier1 fill:#FFFDF3,stroke:#B39255,stroke-width:2px,color:#1C1C1C;
-    classDef tier2 fill:#F4F8FA,stroke:#222E3B,stroke-width:2px,color:#1C1C1C;
-    classDef tier3 fill:#FFF5F5,stroke:#C53929,stroke-width:2px,color:#1C1C1C;
-    classDef individual fill:#FAFAFA,stroke:#777777,stroke-width:1px,color:#1C1C1C;
-
-    subgraph MASTER_MATRIX ["📊 OPERATIONAL STRATIFICATION & PRICING MATRIX"]
-        direction LR
-
-        %% Tier 1 Module
-        subgraph T1 ["🟨 TIER 1: GROWTH-STAGE"]
-            direction TB
-            C1["Criteria: Up to 20 Nodes // Under 10 Developers"]
-            P1["Secure Sandbox Run: $2,500 USD"]
-            S1["Annual Subscription: $1,200 USD/yr"]
-            B1["👉 INITIALIZE T1 SANDBOX"]
-            B2["💳 SUBSCRIBE TO T1 STANDARDS"]
-            C1 --> P1 --> S1 --> B1 & B2
-        end
-
-        %% Tier 2 Module
-        subgraph T2 ["🟦 TIER 2: MID-MARKET"]
-            direction TB
-            C2["Criteria: Up to 100 Nodes // Under 50 Developers"]
-            P2["Secure Sandbox Run: $7,500 USD"]
-            S2["Annual Subscription: $3,600 USD/yr"]
-            B3["👉 INITIALIZE T2 SANDBOX"]
-            B4["💳 SUBSCRIBE TO T2 STANDARDS"]
-            C2 --> P2 --> S2 --> B3 & B4
-        end
-
-        %% Tier 3 Module
-        subgraph T3 ["🟥 TIER 3: CORE INFRASTRUCTURE"]
-            direction TB
-            C3["Criteria: 100+ Nodes // 50+ Deployed Developers"]
-            P3["Secure Sandbox Run: $20,000 USD"]
-            S3["Annual Subscription: $10,000 USD/yr"]
-            B5["👉 INITIALIZE T3 SANDBOX"]
-            B6["💳 SUBSCRIBE TO T3 STANDARDS"]
-            C3 --> P3 --> S3 --> B5 & B6
-        end
+```mermaid
+graph LR
+    subgraph TIER_1 ["🟨 TIER 1: GROWTH-STAGE"]
+        T1_Crit["Up to 20 Nodes / Under 10 Developers"]
+        T1_Sand["Secure Sandbox Diagnostic Run: \$2,500 USD"]
+        T1_Lic["ICIT Operational License: \$1,200 USD / Year"]
+        T1_CTA1["👉 INITIALIZE T1 SANDBOX"]
+        T1_CTA2["💳 SUBSCRIBE TO T1 STANDARDS"]
     end
 
-    %% Individual Track Module Attached Separately Below
-    subgraph IND ["🧠 INDIVIDUAL INDEPENDENT CALIBRATION TRACK"]
-        direction TB
-        C4["Phase 1 P3 Pre-Filter Challenges // Riddle 1 & Riddle 2"]
-        P4["Evaluation Fee: $350 USD Per Attempt"]
-        B7["🧠 INITIATE INDIVIDUAL P3 ASSESSMENT SEAT"]
-        C4 --> P4 --> B7
+    subgraph TIER_2 ["🟦 TIER 2: MID-MARKET"]
+        T2_Crit["Up to 100 Nodes / Under 50 Developers"]
+        T2_Sand["Secure Sandbox Diagnostic Run: \$7,500 USD"]
+        T2_Lic["ICIT Operational License: \$3,600 USD / Year"]
+        T2_CTA1["👉 INITIALIZE T2 SANDBOX"]
+        T2_CTA2["💳 SUBSCRIBE TO T2 STANDARDS"]
     end
 
-    MASTER_MATRIX --- IND
+    subgraph TIER_3 ["🟥 TIER 3: CORE INFRASTRUCTURE"]
+        T3_Crit["100+ Nodes / 50+ Deployed Developers"]
+        T3_Sand["Secure Sandbox Diagnostic Run: \$20,000 USD"]
+        T3_Lic["ICIT Operational License: \$10,000 USD / Year"]
+        T3_CTA1["👉 INITIALIZE T3 SANDBOX"]
+        T3_CTA2["💳 SUBSCRIBE TO T3 STANDARDS"]
+    end
 
-    %% Class Assignments to Force Palette Matching
-    class T1,C1,P1,S1,B1,B2 tier1;
-    class T2,C2,P2,S2,B3,B4 tier2;
-    class T3,C3,P3,S3,B5,B6 tier3;
-    class IND,C4,P4,B7 individual;
+    subgraph INDIVIDUAL_TRACK ["🧠 INDIVIDUAL CALIBRATION TRACK"]
+        IND_Crit["Phase 1 P3 Pre-Filter Challenge Matrix"]
+        IND_Fee["Evaluation Base Fee: \$350 USD Per Attempt"]
+        IND_CTA["🧠 INITIATE INDIVIDUAL P3 ASSESSMENT SEAT"]
+    end
+
+    %% Structural Execution Paths
+    T1_Crit --> T1_Sand --> T1_Lic --> T1_CTA1 & T1_CTA2
+    T2_Crit --> T2_Sand --> T2_Lic --> T2_CTA1 & T2_CTA2
+    T3_Crit --> T3_Sand --> T3_Lic --> T3_CTA1 & T3_CTA2
+    IND_Crit --> IND_Fee --> IND_CTA
+
+    %% Visual Styling for Interface Harmony (Matching your repository language)
+    style T1_Crit fill:#FFFDF3,stroke:#B39255,stroke-width:1px,color:#1C1C1C
+    style T1_Sand fill:#FFFDF3,stroke:#B39255,stroke-width:1px,color:#1C1C1C
+    style T1_Lic fill:#FFFDF3,stroke:#B39255,stroke-width:1px,color:#1C1C1C
+    style T1_CTA1 fill:#FFFDF3,stroke:#B39255,stroke-width:1px,color:#1C1C1C
+    style T1_CTA2 fill:#FFFDF3,stroke:#B39255,stroke-width:1px,color:#1C1C1C
+
+    style T2_Crit fill:#F4F8FA,stroke:#222E3B,stroke-width:1px,color:#1C1C1C
+    style T2_Sand fill:#F4F8FA,stroke:#222E3B,stroke-width:1px,color:#1C1C1C
+    style T2_Lic fill:#F4F8FA,stroke:#222E3B,stroke-width:1px,color:#1C1C1C
+    style T2_CTA1 fill:#F4F8FA,stroke:#222E3B,stroke-width:1px,color:#1C1C1C
+    style T2_CTA2 fill:#F4F8FA,stroke:#222E3B,stroke-width:1px,color:#1C1C1C
+
+    style T3_Crit fill:#FFF5F5,stroke:#C53929,stroke-width:1px,color:#1C1C1C
+    style T3_Sand fill:#FFF5F5,stroke:#C53929,stroke-width:1px,color:#1C1C1C
+    style T3_Lic fill:#FFF5F5,stroke:#C53929,stroke-width:1px,color:#1C1C1C
+    style T3_CTA1 fill:#FFF5F5,stroke:#C53929,stroke-width:1px,color:#1C1C1C
+    style T3_CTA2 fill:#FFF5F5,stroke:#C53929,stroke-width:1px,color:#1C1C1C
+
+    style IND_Crit fill:#FAFAFA,stroke:#777777,stroke-width:1px,color:#1C1C1C
+    style IND_Fee fill:#FAFAFA,stroke:#777777,stroke-width:1px,color:#1C1C1C
+    style IND_CTA fill:#FAFAFA,stroke:#777777,stroke-width:1px,color:#1C1C1C
+```
