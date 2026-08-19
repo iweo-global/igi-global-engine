@@ -1,9 +1,9 @@
-# The Executive Blueprint for Code-Level Infrastructure Intelligence
+# The Enterprise Blueprint for Code-Level Infrastructure Intelligence
 ### *Re-writing the foundations of modern compute with Inductive, Innate, Intuitive Intelligence*
 
 ---
 
-## Executive Overview
+## Overview
 Modern enterprise infrastructure operates in a state of continuous reactive strain - operational inefficiencies, malware vulnerabilities and budget bleeds. Systems are patched, quarantined, scaled, and monitored — yet never truly *corrected or overcome*. This creates a cycle of:
 
 - escalating cloud overhead   
