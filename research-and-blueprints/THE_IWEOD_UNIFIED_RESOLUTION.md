@@ -95,9 +95,9 @@ Perelman’s Ricci Flow and the Iweoid hourglass obey the same structural law:
 ## Grand Integration and Conclusion  
 
 ### The Universal Symmetry Law  
-\[
-D(n) \leftrightarrow I(10-n)
-\]
+$$D(n) \leftrightarrow I(10-n)$$
+
+$$[D|V] \cdot \Delta e^{i(\theta + \phi)} = i \cdot (\tilde{\omega} - \tilde{\iota})$$
 
 - **Deductive Collapse (Lower Basin):** Fragmentation, irregularity, chaos, disappearance.  
 - **Metanoic Inversion (Chrysallis, z = 0):** Collapse into zero‑point singularity; inversion of fragmentation into unity.  
