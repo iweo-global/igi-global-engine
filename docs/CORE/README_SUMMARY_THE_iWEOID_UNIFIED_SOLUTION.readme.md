@@ -11,9 +11,9 @@ System Status: 100% Cryptographic Insulation // Zero-Loss Validation Core [Bohm]
 # README — *The iWeoid Unified Resolution*
 
 ## Overview  
-This repository contains the master paper: **The Unified Resolution: Perelman’s Validation of the Iweoid and the Nine Paradoxes of Unity**.  
+**The Unified Resolution: Perelman’s Validation of the Iweoid and the Nine Paradoxes of Unity**.  
 
-It demonstrates how Grigori Perelman’s proof of the Poincaré Conjecture validates the **Iweoid cosmogram**, and how this symmetry law resolves nine of the world’s greatest paradoxes — spanning mathematics, physics, and consciousness.
+Grigori Perelman’s proof of the Poincaré Conjecture validates the **Iweoid cosmogram**, and how this symmetry law resolves nine of the world’s greatest paradoxes — spanning mathematics, physics, and consciousness.
 
 
 ## Core Principle  
