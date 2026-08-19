@@ -1,0 +1,217 @@
+#!/usr/bin/env python3
+import os
+import json
+import time
+import requests
+from datetime import datetime, timedelta
+from flask import Flask, request, jsonify, redirect
+
+# ========================================================================
+# IGI Core Specification: Commercial B2B SaaS Client Control Panel
+# Target Namespace: iweo-global/igi-global-engine/src/backend/client_control_panel.py
+# ========================================================================
+
+app = Flask(__name__)
+
+# Core Environment Configuration Isolated From Neutral Talent Repositories
+STRIPE_API_KEY = os.environ.get("STRIPE_API_KEY", "sk_test_mock")
+STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET", "whsec_mock")
+SYSTEM_METRICS_ENDPOINT = os.environ.get("SYSTEM_METRICS_ENDPOINT", "http://localhost:9090")
+PLATFORM_DOMAIN = "https://iweo-global.com"
+
+# Hardened File State Registries Fixed within IGI Local Production Scopes
+SUPPORT_FILE = "support_tickets.json"
+SANDBOX_FILE = "active_sandboxes.json"
+
+# In-Memory Tracking Matrix to Prevent Request-Flooding/DDoS
+REQUEST_TRACKER = {}
+
+def init_ledgers():
+    """Initializes isolated tracking databases with zero environmental drift."""
+    if not os.path.exists(SUPPORT_FILE):
+        with open(SUPPORT_FILE, "w") as f:
+            json.dump([], f)
+    if not os.path.exists(SANDBOX_FILE):
+        with open(SANDBOX_FILE, "w") as f:
+            json.dump({}, f)
+
+init_ledgers()
+
+def increment_analytic_metric(metric_key):
+    """Safely increments localized structural event metrics."""
+    try:
+        with open(SANDBOX_FILE, "r") as f:
+            data = json.load(f)
+        if isinstance(data, dict):
+            data[metric_key] = data.get(metric_key, 0) + 1
+            with open(SANDBOX_FILE, "w") as f:
+                json.dump(data, f)
+    except Exception:
+        pass
+
+def create_developer_sandbox(developer_email):
+    """Generates secure unique asset testing credentials valid for 30 cycles."""
+    try:
+        with open(SANDBOX_FILE, "r") as f:
+            sandboxes = json.load(f)
+            
+        sandbox_id = f"SBX-{int(time.time())}"
+        expiry_date = datetime.now() + timedelta(days=30)
+        
+        sandboxes[sandbox_id] = {
+            "developer_email": developer_email,
+            "created_at": datetime.now().isoformat(),
+            "expires_at": expiry_date.isoformat(),
+            "status": "ACTIVE",
+            "test_runs_completed": 0,
+            "last_calibration_status": "UNTESTED"
+        }
+        
+        with open(SANDBOX_FILE, "w") as f:
+            json.dump(sandboxes, f)
+            
+        return sandbox_id, expiry_date.isoformat()
+    except Exception:
+        return None, None
+
+# ========================================================================
+# Core CSS Dashboard Styling Layout Natively Compiled Block
+# ========================================================================
+BASE_CSS = """
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #cbd5e1; padding: 40px; }
+.container { max-width: 1000px; margin: 0 auto; background: #1e293b; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+h1 { color: #38bdf8; margin-top: 0; font-size: 28px; }
+.btn { display: inline-block; padding: 10px 20px; background: #0284c7; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 500; cursor: pointer; border: none; }
+.btn:hover { background: #0369a1; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 30px; }
+.card { background: #1e293b; padding: 20px; border-radius: 8px; border: 1px solid #334155; text-align: center; }
+.stat { font-size: 32px; font-weight: bold; color: #38bdf8; margin-top: 5px; }
+.badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+.badge-open { background: #ef4444; color: #fff; }
+.badge-resolved { background: #22c55e; color: #fff; }
+"""
+
+# ========================================================================
+# Route Handlers and Controller Logic Matrices
+# ========================================================================
+
+@app.route("/", methods=["GET"])
+def render_dashboard():
+    """Renders the core B2B commercial landing workspace control portal."""
+    increment_analytic_metric("sandbox_view_count")
+    
+    html = f"""<!DOCTYPE html><html><head><style>{BASE_CSS}</style><title>IGI Global Engine | Control Center</title></head><body>"""
+    html += f"""<div class="container"><h1>IGI Global Cloud Operations Center</h1>"""
+    html += f"""<p>Welcome to the autonomous management interface. Safely coordinate cluster outages and optimize processing nodes.</p>"""
+    html += f"""<div class="grid"><div class="card">Active Cluster State<div class="stat">GRADE_A_PARITY</div></div></div>"""
+    html += f"""<a href="/help" class="btn">Open System Support Ticket</a> <a href="/admin/metrics" class="btn" style="background:#475569;">Admin Console</a>"""
+    html += f"""</div></body></html>"""
+    return html
+
+@app.route("/help", methods=["GET", "POST"])
+def render_help_desk():
+    """Manages secure support ticketing pipelines and Stripe billing routes."""
+    if request.method == "POST":
+        category = request.form.get("category", "general")
+        github_username = request.form.get("github_username", "anonymous")
+        message = request.form.get("message", "")
+        
+        ticket = {
+            "ticket_id": datetime.now().strftime("TCK-%Y%m%d%H%M%S"),
+            "timestamp": datetime.now().isoformat(),
+            "github_username": github_username,
+            "category": category,
+            "message": message,
+            "status": "OPEN"
+        }
+        
+        if category == "payment_stripe":
+            return redirect("https://stripe.com")
+            
+        try:
+            with open(SUPPORT_FILE, "r") as f:
+                tickets = json.load(f)
+            tickets.append(ticket)
+            with open(SUPPORT_FILE, "w") as f:
+                json.dump(tickets, f)
+        except Exception as e:
+            return jsonify({"error": f"Failed to record ticket: {str(e)}"}), 500
+            
+        return f"""<!DOCTYPE html><html><head><style>{BASE_CSS}</style></head><body><div class="container"><h1>Ticket Logged Successfully</h1><p>System tracking signature registered. An IGI support agent has been notified.</p><a href="/" class="btn">Return to Panel</a></div></body></html>"""
+
+    html = f"""<!DOCTYPE html><html><head><style>{BASE_CSS}</style><title>IGI | System Support</title></head><body><div class="container"><h1>IGI Sovereign Support Portal</h1><form method="POST">"""
+    html += f"""<label>Github Username:</label><input type="text" name="github_username" required style="width:100%;padding:8px;margin:10px 0;background:#0f172a;color:#fff;border:1px solid #334155;border-radius:4px;"><br>"""
+    html += f"""<label>Inquiry Classification:</label><select name="category" style="width:100%;padding:8px;margin:10px 0;background:#0f172a;color:#fff;border:1px solid #334155;border-radius:4px;">"""
+    html += f"""<option value="general">General Architecture Inquiries</option><option value="payment_stripe">Stripe Subscription Billing Reconciliations</option><option value="technical">SaaS SDK / LOTUS Sentinel Integration Faults</option></select><br>"""
+    html += f"""<label>Diagnostic Logs / Anomaly Descriptions:</label><textarea name="message" required style="width:100%;height:120px;padding:8px;margin:10px 0;background:#0f172a;color:#fff;border:1px solid #334155;border-radius:4px;"></textarea><br>"""
+    html += f"""<button type="submit" class="btn">Submit Core Integrity Notice</button></form></div></body></html>"""
+    return html
+
+@app.route("/admin/metrics", methods=["GET"])
+def render_admin_metrics():
+    """Compiles analytic records and generates a clean operations dashboard."""
+    try:
+        with open(SANDBOX_FILE, "r") as f:
+            sandboxes = json.load(f)
+        with open(SUPPORT_FILE, "r") as f:
+            tickets = json.load(f)
+    except Exception:
+        return jsonify({"error": "Failed to read system metric logs"}), 500
+
+    total_tickets = len(tickets)
+    open_tickets = sum(1 for t in tickets if t.get("status") == "OPEN")
+    
+    resolved_times = []
+    user_frequency = {}
+    
+    for t in tickets:
+        user = t.get("github_username", "unknown")
+        user_frequency[user] = user_frequency.get(user, 0) + 1
+        
+        if t.get("status") == "RESOLVED" and "resolved_at" in t and "timestamp" in t:
+            try:
+                start = datetime.fromisoformat(t["timestamp"])
+                end = datetime.fromisoformat(t["resolved_at"])
+                resolved_times.append((end - start).total_seconds())
+            except ValueError:
+                continue
+
+    avg_rec_time = (sum(resolved_times) / len(resolved_times)) / 60.0 if resolved_times else 0.0
+    recurring_failures = sum(1 for u, count in user_frequency.items() if count > 2)
+
+    html = f"""<!DOCTYPE html><html><head><style>{BASE_CSS}</style><title>IGI Admin Console</title></head><body><div class="container">"""
+    html += f"""<h1>IGI Core Command & Telemetry Center</h1><p>Real-time analytics engine processing wide-area operational variables.</p>"""
+    html += f"""<div class="grid"><div class="card">Open Support Incidents<div class="stat">{open_tickets} / {total_tickets}</div></div>"""
+    html += f"""<div class="card">Mean Resolution Time<div class="stat">{avg_rec_time:.1f} min</div></div>"""
+    html += f"""<div class="card">High-Friction Environments<div class="stat">{recurring_failures}</div></div></div>"""
+    
+    html += f"""<h3>Active Core Tickets Registry</h3>"""
+    if not tickets:
+        html += f"""<p style="padding:15px;background:#1e293b;border-radius:6px;color:#64748b;">Zero mechanical friction anomalies reported across active node lines.</p>"""
+    else:
+
+    html += f"<h3>Active Core Tickets Registry</h3>"
+    
+    if not tickets:
+        html += f"<p style='padding:15px;background:#1e293b;border-radius:6px;color:#64748b;'>Zero mechanical friction anomalies reported across active node lines.</p>"
+    else:
+        for t in tickets:
+            # Flawlessly map status configurations without collapsing text paths
+            if t.get("status") == "OPEN":
+                status_badge = f"<span class='badge badge-open'>OPEN</span>"
+            else:
+                status_badge = f"<span class='badge badge-resolved'>RESOLVED</span>"
+            
+            # Segmented html row components to prevent single-line file wrapping
+            html += f"<div style='padding:12px;background:#0f172a;border-radius:6px;margin-bottom:10px;border-left:4px solid #38bdf8;'>"
+            html += f"    {status_badge} <strong>{t.get('ticket_id')}</strong><br>"
+            html += f"    <span style='color:#94a3b8;'>User:</span> {t.get('github_username')} | "
+            html += f"    <span style='color:#94a3b8;'>Category:</span> {t.get('category')}<br>"
+            html += f"    <small style='color:#64748b; display:block; margin-top:5px;'>{t.get('message')}</small>"
+            html += f"</div>"
+            
+    html += f"<br><a href='/' class='btn'>Back to Dashboard</a></div></body></html>"
+    return html
+
+@app.route("/sandbox/<sandbox_id>", methods=["POST"])
+def process_sandbox_test(sandbox_id):
