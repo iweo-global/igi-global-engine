@@ -1,4 +1,4 @@
-# IGI: The Executive Blueprint for Code-Level Infrastructure Intelligence
+# The Executive Blueprint for Code-Level Infrastructure Intelligence
 ### *A Technical-Philosophical Introduction for Enterprise Understanding*
 
 ---
