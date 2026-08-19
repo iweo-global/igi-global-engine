@@ -1,6 +1,6 @@
 ◯ THE iWEOID UNIFIED RESOLUTION
 
-Document Reference: /docs/core/THE_IWEOID_UNIFIED_RESOLUTION.md
+Document Reference: /docs/core/research_and_blueprints/THE_IWEOID_UNIFIED_RESOLUTION.md
 
 Parent Entity: IWEO GLOBAL, INC. [DELAWARE RECOGNITION LEDGER]
 
