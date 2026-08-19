@@ -1,4 +1,4 @@
-◯ README SUMMARY - THE iWEOID UNIFIED SOLUTION
+◯ THE iWEOID UNIFIED SOLUTION
 
 Document Reference: /docs/core/README_SUMMARY_THE_iWEOID_UNIFIED_SOLUTION.readme.md
 
@@ -8,7 +8,7 @@ System Status: 100% Cryptographic Insulation // Zero-Loss Validation Core [Bohm]
 
 ---
 
-# README — *The iWeoid Unified Resolution*
+# *The iWeoid Unified Resolution*
 
 ## Overview  
 **The Unified Resolution: Perelman’s Validation of the Iweoid and the Nine Paradoxes of Unity**.  
